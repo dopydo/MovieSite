@@ -21,8 +21,8 @@
          
          for(var i = 0; i<movie01.statuses.length; i++) {
          output01("<p>"+ movie01.statuses[i].text + "</p>");
-          }
-      	});
+         }
+      	 });
 
         $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item01, function(trailer01){
 
@@ -48,8 +48,16 @@
          for(var i = 0; i<movie02.statuses.length; i++) {
          output02("<p>"+ movie02.statuses[i].text + "</p>");
           }
-     	});
-      });
+     	    });
+      $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item02, function(trailer02){
+
+          var url = trailer02[1].url;
+          var segment= url.split('=')[1].split('&')[0];
+          var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
+
+         outputvideo(embed);
+        });
+        });
 
  		var output03 = function(text) {
         $(".third").append(text);
@@ -64,6 +72,14 @@
          output03("<p>"+ movie03.statuses[i].text + "</p>");
           }
       	});
+      $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item03, function(trailer03){
+
+          var url = trailer03[1].url;
+          var segment= url.split('=')[1].split('&')[0];
+          var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
+
+         outputvideo(embed);
+        });
         });
 
   		var output04 = function(text) {
@@ -79,6 +95,14 @@
          output04("<p>"+ movie04.statuses[i].text + "</p>");
           }
       	});
+      $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item04, function(trailer04){
+
+          var url = trailer04[1].url;
+          var segment= url.split('=')[1].split('&')[0];
+          var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
+
+         outputvideo(embed);
+        });
         });
 
  		var output05 = function(text) {
@@ -94,6 +118,14 @@
          output05("<p>"+ movie05.statuses[i].text + "</p>");
           }
       	});
+      $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item05, function(trailer05){
+
+          var url = trailer05[1].url;
+          var segment= url.split('=')[1].split('&')[0];
+          var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
+
+         outputvideo(embed);
+        });
         });
 
 		</script>
