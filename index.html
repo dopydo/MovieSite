@@ -46,7 +46,7 @@
   		var output04 = function(text) {
         $(".fourth").append(text);
         }
-   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20hyena", function(movie04){
+   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20furious%207", function(movie04){
          
          for(var i = 0; i<movie04.statuses.length; i++) {
          output04("<p>"+ movie04.statuses[i].text + "</p>");
@@ -55,7 +55,7 @@
  		var output05 = function(text) {
         $(".fifth").append(text);
         }
-   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20iris", function(movie05){
+   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20the%20age%20of%20adaline", function(movie05){
          
          for(var i = 0; i<movie05.statuses.length; i++) {
          output05("<p>"+ movie05.statuses[i].text + "</p>");
