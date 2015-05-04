@@ -10,10 +10,11 @@
  		 var output01 = function(text) {
         $(".first").append(text);
         }
-     var item01 = $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list01) {
-        list01.results.collection[0].movies.text
-      });
-   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20"+ "item01", function(movie01){
+      $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list01) {
+        
+        var item01 = list01.results.collection[0].movies.text;
+    
+   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20"+ item01, function(movie01){
          
          for(var i = 0; i<movie01.statuses.length; i++) {
          output01("<p>"+ movie01.statuses[i].text + "</p>");
@@ -25,6 +26,7 @@
          	"<iframe width='420' height='315' src='http://www.youtube.com/watch?v=UKY3scPIMd8&feature=youtube_gdata'>" + 
 			"</iframe>");
       	});
+        });
 
 
 
