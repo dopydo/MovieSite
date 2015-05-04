@@ -37,7 +37,7 @@
         
         var item02 = list02.results.collection1[1].movies.text;
 
-   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20welcome%20to%20me", function(movie02){
+   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20"+ item02, function(movie02){
          
          for(var i = 0; i<movie02.statuses.length; i++) {
          output02("<p>"+ movie02.statuses[i].text + "</p>");
@@ -52,7 +52,7 @@
         
         var item03 = list03.results.collection1[2].movies.text;
 
-   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20far%20from%20the%20madding%20crowd", function(movie03){
+   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20"+ item03, function(movie03){
          
          for(var i = 0; i<movie03.statuses.length; i++) {
          output03("<p>"+ movie03.statuses[i].text + "</p>");
@@ -67,7 +67,7 @@
         
         var item04 = list04.results.collection1[3].movies.text;
 
-   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20furious%207", function(movie04){
+   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20"+ item04, function(movie04){
          
          for(var i = 0; i<movie04.statuses.length; i++) {
          output04("<p>"+ movie04.statuses[i].text + "</p>");
@@ -82,7 +82,7 @@
         
         var item05 = list05.results.collection1[4].movies.text;
 
-   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20the%20age%20of%20adaline", function(movie05){
+   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20"+ item05, function(movie05){
          
          for(var i = 0; i<movie05.statuses.length; i++) {
          output05("<p>"+ movie05.statuses[i].text + "</p>");
