@@ -7,14 +7,49 @@
 		<script>
 			// $(document).ready(function(){
    //     		 $.getJSON("http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?page_limit=16&page=1&country=us&apikey=",
-  var output = function(text) {
-        $("body").append(text);
+  var output01 = function(text) {
+        $(".first").append(text);
         }
    		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20avengers", function(movie01){
          
-       	output(movie01.statuses[0].user.name)
          for(var i = 0; i<movie01.statuses.length; i++) {
-         output("<p>"+ movie01.statuses[i].text + "</p>");
+         output01("<p>"+ movie01.statuses[i].text + "</p>");
+          }
+      });
+  var output02 = function(text) {
+        $(".second").append(text);
+        }
+   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20welcome%20to%20me", function(movie02){
+         
+         for(var i = 0; i<movie02.statuses.length; i++) {
+         output("<p>"+ movie02.statuses[i].text + "</p>");
+          }
+      });
+  var output03 = function(text) {
+        $(".third").append(text);
+        }
+   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20far%20from%20the%20madding%20crowd", function(movie03){
+         
+         for(var i = 0; i<movie03.statuses.length; i++) {
+         output03("<p>"+ movie03.statuses[i].text + "</p>");
+          }
+      });
+  var output04 = function(text) {
+        $(".fourth").append(text);
+        }
+   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20hayena", function(movie01){
+         
+         for(var i = 0; i<movie04.statuses.length; i++) {
+         output("<p>"+ movie04.statuses[i].text + "</p>");
+          }
+      });
+ var output05 = function(text) {
+        $(".fifth").append(text);
+        }
+   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20iris", function(movie01){
+         
+         for(var i = 0; i<movie05.statuses.length; i++) {
+         output("<p>"+ movie05.statuses[i].text + "</p>");
           }
       });
 
@@ -24,5 +59,15 @@
 
 	</head>
 	<body>
+		<div class="first">
+		</div>
+		<div class="second">
+		</div>
+		<div class="third">
+		</div>
+		<div class="fourth">
+		</div>
+		<div class="fifth">
+		</div>
 	</body>
 </html>	
