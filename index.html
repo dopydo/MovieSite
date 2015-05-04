@@ -13,8 +13,6 @@
       $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list01) {
         
         var item01 = list01.results.collection1[0].movies.text;
-
-        console.log(item01);
     
    		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20"+ item01, function(movie01){
          
@@ -35,39 +33,62 @@
  		var output02 = function(text) {
         $(".second").append(text);
         }
+        $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list02) {
+        
+        var item02 = list02.results.collection1[1].movies.text;
+
    		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20welcome%20to%20me", function(movie02){
          
          for(var i = 0; i<movie02.statuses.length; i++) {
          output02("<p>"+ movie02.statuses[i].text + "</p>");
           }
      	});
+      });
+
  		var output03 = function(text) {
         $(".third").append(text);
         }
+        $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list03) {
+        
+        var item03 = list03.results.collection1[2].movies.text;
+
    		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20far%20from%20the%20madding%20crowd", function(movie03){
          
          for(var i = 0; i<movie03.statuses.length; i++) {
          output03("<p>"+ movie03.statuses[i].text + "</p>");
           }
       	});
+        });
+
   		var output04 = function(text) {
         $(".fourth").append(text);
         }
+        $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list04) {
+        
+        var item04 = list04.results.collection1[3].movies.text;
+
    		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20furious%207", function(movie04){
          
          for(var i = 0; i<movie04.statuses.length; i++) {
          output04("<p>"+ movie04.statuses[i].text + "</p>");
           }
       	});
+        });
+
  		var output05 = function(text) {
         $(".fifth").append(text);
         }
+        $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list05) {
+        
+        var item05 = list05.results.collection1[4].movies.text;
+
    		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/movie%20the%20age%20of%20adaline", function(movie05){
          
          for(var i = 0; i<movie05.statuses.length; i++) {
          output05("<p>"+ movie05.statuses[i].text + "</p>");
           }
       	});
+        });
 
 		</script>
 		
