@@ -6,7 +6,11 @@
 		<script>
 			// $(document).ready(function(){
    //     		 $.getJSON("http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?page_limit=16&page=1&country=us&apikey=",
- 		 var output01 = function(text) {
+ 		 var outputvideo = function(text) {
+        $(".video").append(text);
+        }
+
+     var output01 = function(text) {
         $(".first").append(text);
         }
       $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list01) {
@@ -26,7 +30,7 @@
           var segment= url.split('=')[1].split('&')[0];
           var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
 
-         output01(embed);
+         outputvideo(embed);
       	});
         });
 
@@ -110,6 +114,9 @@
 			text-align: center;
 			font-family: Georgia;
 		}
+    .video {
+      clear: both;
+    }
 		</style>
 
 	</head>
@@ -129,5 +136,8 @@
 
 		<div class="fifth">
 		</div>
+
+    <div class="video">
+    </div>
 	</body>
 </html>	
