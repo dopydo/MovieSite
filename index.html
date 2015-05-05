@@ -6,13 +6,39 @@
 		<script>
 			// $(document).ready(function(){
    //     		 $.getJSON("http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?page_limit=16&page=1&country=us&apikey=",
- 		 var outputvideo = function(text) {
-        $(".video").append(text);
+ 		 var outputvideo01 = function(text) {
+        $(".videofirst").append(text);
         }
 
      var output01 = function(text) {
         $(".first").append(text);
         }
+
+    // var getData = function(title, selector) {
+
+
+          
+    //         $.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20"+ title, function(movie){
+               
+    //            for(var i = 0; i<movie.statuses.length; i++) {
+    //            output01("<p>"+ movie.statuses[i].text + "</p>");
+    //            }
+    //            });
+
+    //           $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + title, function(trailer){
+
+    //             var url = trailer[1].url;
+    //             var segment= url.split('=')[1].split('&')[0];
+    //             var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
+
+    //            outputvideo(embed);
+    //           });
+         
+    //   }
+
+    //   getData("avengers", "#first");
+
+
       $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list01) {
         
         var item01 = list01.results.collection1[0].movies.text;
@@ -30,12 +56,14 @@
           var segment= url.split('=')[1].split('&')[0];
           var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
 
-         outputvideo(embed);
+         outputvideo01(embed);
       	});
         });
 
 
-
+    var outputvideo02 = function(text) {
+        $(".videosecond").append(text);
+        }
  		var output02 = function(text) {
         $(".second").append(text);
         }
@@ -55,11 +83,14 @@
           var segment= url.split('=')[1].split('&')[0];
           var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
 
-         outputvideo(embed);
+         outputvideo02(embed);
         });
         });
 
- 		var output03 = function(text) {
+ 		var outputvideo03 = function(text) {
+        $(".videothird").append(text);
+        }
+    var output03 = function(text) {
         $(".third").append(text);
         }
         $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list03) {
@@ -78,11 +109,14 @@
           var segment= url.split('=')[1].split('&')[0];
           var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
 
-         outputvideo(embed);
+         outputvideo03(embed);
         });
         });
 
-  		var output04 = function(text) {
+  		var outputvideo04 = function(text) {
+        $(".videofourth").append(text);
+        }
+      var output04 = function(text) {
         $(".fourth").append(text);
         }
         $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list04) {
@@ -101,11 +135,14 @@
           var segment= url.split('=')[1].split('&')[0];
           var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
 
-         outputvideo(embed);
+         outputvideo04(embed);
         });
         });
 
- 		var output05 = function(text) {
+ 		var outputvideo05 = function(text) {
+        $(".videofifth").append(text);
+        }
+    var output05 = function(text) {
         $(".fifth").append(text);
         }
         $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list05) {
@@ -124,7 +161,7 @@
           var segment= url.split('=')[1].split('&')[0];
           var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
 
-         outputvideo(embed);
+         outputvideo05(embed);
         });
         });
 
@@ -175,7 +212,19 @@
 		<div class="fifth">
 		</div>
 
-    <div class="video">
+    <div class="videofirst">
+    </div>
+
+    <div class="videosecond">
+    </div>
+
+    <div class="videothird">
+    </div>
+
+    <div class="videofourth">
+    </div>
+
+    <div class="videofifth">
     </div>
 	</body>
 </html>	
