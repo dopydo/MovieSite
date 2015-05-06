@@ -9,15 +9,16 @@
   
     $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list) {
         
-    var item = list.results.collection1[i].movies.text;
-
     for(var i = 0; i<5; i++) {
+
+      var item = list.results.collection1[i].movies.text;
 
         $.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20"+ item[i], function(tweet){
           
-          
+          for(var i = 0; i<movie01.statuses.length; i++) {
+     //     
           $(."tweet-"+i"").append("<p>"+tweet.statuses[i].text+ "</p>");
-          
+          };
           });
 
         $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item[i], function(trailer) {
