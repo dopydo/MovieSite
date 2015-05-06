@@ -6,34 +6,32 @@
 		<script>
 			// $(document).ready(function(){
 
- 		 var output = function(text) {
-        var capsule = text;
-        }
-     var outputvideo01 = function(text) {
-        $("#videofirst").append(text);
-        }
-
-     var output01 = function(text) {
-        $(".first").append(text);
-        }
-    
-    $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list01) {
+  
+    $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list) {
         
-    var item01 = list01.results.collection1[0].movies.text;
+    var item = list.results.collection1[i].movies.text;
 
-     var tweet = function(item) {
-    
-      $.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20"+ item, function(movie){
+    for(var i = 0; i<5; i++) {
+
+        $.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20"+ item[i], function(tweet){
+          
+          
+          $(."tweet-"+i"").append("<p>"+tweet.statuses[i].text+ "</p>");
+          
+          });
+
+        $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item[i], function(trailer) {
+          
+          var url = trailer[1].url;
+          var segment= url.split('=')[1].split('&')[0];
+          var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
+
+          $(#"video-"+i"").append(embed);
          
-         for(var i = 0; i<movie.statuses.length; i++) {
-         output("<p>"+ movie.statuses[i].text + "</p>");
-         }
-         });
-
-     };
-     
+        });
+    };
     });
-     output01(capsule);
+    
      
 
 
@@ -75,120 +73,120 @@
      //     }
      //  	 });
 
-        $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item01, function(trailer01){
+   //      $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item01, function(trailer01){
 
-          var url = trailer01[1].url;
-          var segment= url.split('=')[1].split('&')[0];
-          var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
+   //        var url = trailer01[1].url;
+   //        var segment= url.split('=')[1].split('&')[0];
+   //        var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
 
-         outputvideo01(embed);
-      	});
-        // });
+   //       outputvideo01(embed);
+   //    	});
+   //      // });
 
 
-    var outputvideo02 = function(text) {
-        $("#videosecond").append(text);
-        }
- 		var output02 = function(text) {
-        $(".second").append(text);
-        }
-        $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list02) {
+   //  var outputvideo02 = function(text) {
+   //      $("#videosecond").append(text);
+   //      }
+ 		// var output02 = function(text) {
+   //      $(".second").append(text);
+   //      }
+   //      $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list02) {
         
-        var item02 = list02.results.collection1[1].movies.text;
+   //      var item02 = list02.results.collection1[1].movies.text;
 
-   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20"+ item02, function(movie02){
+   // 		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20"+ item02, function(movie02){
          
-         for(var i = 0; i<movie02.statuses.length; i++) {
-         output02("<p>"+ movie02.statuses[i].text + "</p>");
-          }
-     	    });
-      $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item02, function(trailer02){
+   //       for(var i = 0; i<movie02.statuses.length; i++) {
+   //       output02("<p>"+ movie02.statuses[i].text + "</p>");
+   //        }
+   //   	    });
+   //    $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item02, function(trailer02){
 
-          var url = trailer02[1].url;
-          var segment= url.split('=')[1].split('&')[0];
-          var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
+   //        var url = trailer02[1].url;
+   //        var segment= url.split('=')[1].split('&')[0];
+   //        var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
 
-         outputvideo02(embed);
-        });
-        });
+   //       outputvideo02(embed);
+   //      });
+   //      });
 
- 		var outputvideo03 = function(text) {
-        $("#videothird").append(text);
-        }
-    var output03 = function(text) {
-        $(".third").append(text);
-        }
-        $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list03) {
+ 		// var outputvideo03 = function(text) {
+   //      $("#videothird").append(text);
+   //      }
+   //  var output03 = function(text) {
+   //      $(".third").append(text);
+   //      }
+   //      $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list03) {
         
-        var item03 = list03.results.collection1[2].movies.text;
+   //      var item03 = list03.results.collection1[2].movies.text;
 
-   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20"+ item03, function(movie03){
+   // 		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20"+ item03, function(movie03){
          
-         for(var i = 0; i<movie03.statuses.length; i++) {
-         output03("<p>"+ movie03.statuses[i].text + "</p>");
-          }
-      	});
-      $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item03, function(trailer03){
+   //       for(var i = 0; i<movie03.statuses.length; i++) {
+   //       output03("<p>"+ movie03.statuses[i].text + "</p>");
+   //        }
+   //    	});
+   //    $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item03, function(trailer03){
 
-          var url = trailer03[1].url;
-          var segment= url.split('=')[1].split('&')[0];
-          var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
+   //        var url = trailer03[1].url;
+   //        var segment= url.split('=')[1].split('&')[0];
+   //        var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
 
-         outputvideo03(embed);
-        });
-        });
+   //       outputvideo03(embed);
+   //      });
+   //      });
 
-  		var outputvideo04 = function(text) {
-        $("#videofourth").append(text);
-        }
-      var output04 = function(text) {
-        $(".fourth").append(text);
-        }
-        $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list04) {
+  	// 	var outputvideo04 = function(text) {
+   //      $("#videofourth").append(text);
+   //      }
+   //    var output04 = function(text) {
+   //      $(".fourth").append(text);
+   //      }
+   //      $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list04) {
         
-        var item04 = list04.results.collection1[3].movies.text;
+   //      var item04 = list04.results.collection1[3].movies.text;
 
-   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20"+ item04, function(movie04){
+   // 		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20"+ item04, function(movie04){
          
-         for(var i = 0; i<movie04.statuses.length; i++) {
-         output04("<p>"+ movie04.statuses[i].text + "</p>");
-          }
-      	});
-      $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item04, function(trailer04){
+   //       for(var i = 0; i<movie04.statuses.length; i++) {
+   //       output04("<p>"+ movie04.statuses[i].text + "</p>");
+   //        }
+   //    	});
+   //    $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item04, function(trailer04){
 
-          var url = trailer04[1].url;
-          var segment= url.split('=')[1].split('&')[0];
-          var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
+   //        var url = trailer04[1].url;
+   //        var segment= url.split('=')[1].split('&')[0];
+   //        var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
 
-         outputvideo04(embed);
-        });
-        });
+   //       outputvideo04(embed);
+   //      });
+   //      });
 
- 		var outputvideo05 = function(text) {
-        $("#videofifth").append(text);
-        }
-    var output05 = function(text) {
-        $(".fifth").append(text);
-        }
-        $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list05) {
+ 		// var outputvideo05 = function(text) {
+   //      $("#videofifth").append(text);
+   //      }
+   //  var output05 = function(text) {
+   //      $(".fifth").append(text);
+   //      }
+   //      $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list05) {
         
-        var item05 = list05.results.collection1[4].movies.text;
+   //      var item05 = list05.results.collection1[4].movies.text;
 
-   		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20"+ item05, function(movie05){
+   // 		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20"+ item05, function(movie05){
          
-         for(var i = 0; i<movie05.statuses.length; i++) {
-         output05("<p>"+ movie05.statuses[i].text + "</p>");
-          }
-      	});
-      $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item05, function(trailer05){
+   //       for(var i = 0; i<movie05.statuses.length; i++) {
+   //       output05("<p>"+ movie05.statuses[i].text + "</p>");
+   //        }
+   //    	});
+   //    $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item05, function(trailer05){
 
-          var url = trailer05[1].url;
-          var segment= url.split('=')[1].split('&')[0];
-          var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
+   //        var url = trailer05[1].url;
+   //        var segment= url.split('=')[1].split('&')[0];
+   //        var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
 
-         outputvideo05(embed);
-        });
-        });
+   //       outputvideo05(embed);
+   //      });
+   //      });
 
 		</script>
 		
@@ -222,34 +220,34 @@
 	</head>
 	<body>
 		<h2> Top 5 Trending Movies New Yorkers are Talking about NOW </h2>
-		<div class="first">
+		<div class="tweet-0">
 		</div>
 
-		<div class="second">
+		<div class="tweet-1">
 		</div>
 
-		<div class="third">
+		<div class="tweet-2">
 		</div>
 
-		<div class="fourth">
+		<div class="tweet-3">
 		</div>
 
-		<div class="fifth">
+		<div class="tweet-4">
 		</div>
 
-    <div class="video" id="videofirst">
+    <div class="video" id="video-0">
     </div>
 
-    <div class="video" id="videosecond">
+    <div class="video" id="video-1">
     </div>
 
-    <div class="video" id="videothird">
+    <div class="video" id="video-2">
     </div>
 
-    <div class="video" id="videofourth">
+    <div class="video" id="video-3">
     </div>
 
-    <div class="video" id="videofifth">
+    <div class="video" id="video-4">
     </div>
  
 	</body>
