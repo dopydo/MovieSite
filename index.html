@@ -15,9 +15,9 @@
 
         $.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20"+ item[i], function(tweet){
           
-          for(var i = 0; i<movie01.statuses.length; i++) {
+          for(var j = 0; j<tweet.statuses.length; j++) {
      //     
-          $(."tweet-"+i"").append("<p>"+tweet.statuses[i].text+ "</p>");
+          $(".tweet-"+ i).append("<p>"+tweet.statuses[j].text+ "</p>");
           };
           });
 
@@ -27,7 +27,7 @@
           var segment= url.split('=')[1].split('&')[0];
           var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
 
-          $(#"video-"+i"").append(embed);
+          $(#"video-"+ i"").append(embed);
          
         });
     };
