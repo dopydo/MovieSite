@@ -14,9 +14,9 @@
       var item = list.results.collection1[i].movies.text;
 
           (function(i, item){
-            var title = "<h1>"+item+ "</h1>";
-            $("#tweet-"+i).append(title);
-            $("#video-"+i).append(title);
+            // var title = "<h1>"+item+ "</h1>";
+            $("#tweet-"+i+" h1").append(item);
+            // $("#video-"+i).append(title);
 
           var url = "http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20" + item;
           console.log(url);
@@ -35,7 +35,7 @@
 
           var segment= trailer.items[0].id.videoId;
             console.log(segment);
-          var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
+          var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="224" height="126" frameborder="0" allowfullscreen></iframe>';
             console.log(embed);
           $("#video-"+ i).append("<p>"+embed+"</p>");
          
@@ -44,6 +44,27 @@
         })(i, item);
         };
 
+        $("#button-0").click(function(){
+            $("#video-0 iframe").toggleClass("big");
+           
+          });
+        $("#button-1").click(function(){
+            $("#video-1 iframe").toggleClass("big");
+           
+          });
+        $("#button-2").click(function(){
+            $("#video-2 iframe").toggleClass("big");
+           
+          });
+        $("#button-3").click(function(){
+            $("#video-3 iframe").toggleClass("big");
+           
+          });
+        $("#button-4").click(function(){
+            $("#video-4 iframe").toggleClass("big");
+           
+          });
+        
 
       }); //end $.getJSON
 
@@ -81,7 +102,6 @@
     .video {
       border: none;
       float: none;
-      width: 1000px;
     }
   .video h1 {
     display: inline;
@@ -103,60 +123,92 @@
   #tweet-4, #video-4 {
     color: #FFFF00;
   }
-  .tweet:hover{
-        width:50%;
-        height:100%;
-        clear:both;
-        position:absolute;
-        top: 300px;
-        background-color: black;
-        
-      }
+  .button {
+    width: 200px;
+    clear:both;
+    border:none;
+  }
+  #video-0 iframe.big {
+    width:800px;
+    height: 450px;
+    position: absolute;
+    left:200px;
+    top: 460px;
+  }
+  #video-1 iframe.big {
+    width:800px;
+    height: 450px;
+    position: absolute;
+    left:200px;
+    top: 460px;
+  }
+  #video-2 iframe.big {
+    width:800px;
+    height: 450px;
+    position: absolute;
+    left:200px;
+    top: 460px;
+  }
+  #video-3 iframe.big {
+    width:800px;
+    height: 450px;
+    position: absolute;
+    left:200px;
+    top: 460px;
+  }
+  #video-4 iframe.big {
+    width:800px;
+    height: 450px;
+    position: absolute;
+    left:200px;
+    top: 460px;
+  }
+ /* iframe:click {
+    width:800px;
+    height: 450px;
+    position: absolute;
+    left:200px;
 
+  }*/
 		</style>
 
 	</head>
 	<body>
 		<header> Top 5 Trending Movies New Yorkers are talking about NOW. </header>
 		<div class="tweet" id="tweet-0">
-      <h1> #1 </h1>
+      <h1> #1 </h1>   
+      <div class="button" id="button-0"> <p> expand video </p> </div>
+      <div class="video" id="video-0">
+      </div>
+      
 		</div>
 
 		<div class="tweet" id="tweet-1">
       <h1> #2 </h1>
-		</div>
+      <div class="button" id="button-1"> <p> expand video </p> </div>
+      <div class="video" id="video-1">
+      </div>
+    </div>
 
 		<div class="tweet" id="tweet-2">
       <h1> #3 </h1>
+      <div class="button" id="button-2"> <p> expand video </p> </div>
+      <div class="video" id="video-2">
+      </div>
 		</div>
 
 		<div class="tweet" id="tweet-3">
       <h1> #4 </h1>
+      <div class="button" id="button-3"> <p> expand video </p> </div>
+      <div class="video" id="video-3">
+      </div>
 		</div>
 
 		<div class="tweet" id="tweet-4">
       <h1> #5 </h1>
+      <div class="button" id="button-4"> <p> expand video </p> </div>
+      <div class="video" id="video-4">
+      </div>
 		</div>
-
-    <div class="video" id="video-0">
-      <h1> #1 </h1>
-    </div>
-
-    <div class="video" id="video-1">
-      <h1> #2 </h1>
-    </div>
-
-    <div class="video" id="video-2">
-      <h1> #3 </h1>
-    </div>
-
-    <div class="video" id="video-3">
-      <h1> #4 </h1>
-    </div>
-
-    <div class="video" id="video-4">
-      <h1> #5 </h1>
-    </div>
- 
 	</body>
 </html>	
