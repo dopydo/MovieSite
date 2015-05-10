@@ -4,7 +4,7 @@
 		<title>API Tomato Twitter Tube</title>
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
 		<script>
-			// $(document).ready(function(){
+			$(document).ready(function(){
 
   
     $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list) {
@@ -40,137 +40,9 @@
          
         });
   
-    })(i, item);
+        })(i, item);
     
-     
-
-
-
-     //  $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list01) {
-        
-     //    var item01 = list01.results.collection1[0].movies.text;
-    
-   		// $.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20"+ item01, function(movie01){
-         
-     //     for(var i = 0; i<movie01.statuses.length; i++) {
-     //     output01("<p>"+ movie01.statuses[i].text + "</p>");
-     //     }
-     //  	 });
-
-   //      $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item01, function(trailer01){
-
-   //        var url = trailer01[1].url;
-   //        var segment= url.split('=')[1].split('&')[0];
-   //        var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
-
-   //       outputvideo01(embed);
-   //    	});
-   //      // });
-
-
-   //  var outputvideo02 = function(text) {
-   //      $("#videosecond").append(text);
-   //      }
- 		// var output02 = function(text) {
-   //      $(".second").append(text);
-   //      }
-   //      $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list02) {
-        
-   //      var item02 = list02.results.collection1[1].movies.text;
-
-   // 		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20"+ item02, function(movie02){
-         
-   //       for(var i = 0; i<movie02.statuses.length; i++) {
-   //       output02("<p>"+ movie02.statuses[i].text + "</p>");
-   //        }
-   //   	    });
-   //    $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item02, function(trailer02){
-
-   //        var url = trailer02[1].url;
-   //        var segment= url.split('=')[1].split('&')[0];
-   //        var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
-
-   //       outputvideo02(embed);
-   //      });
-   //      });
-
- 		// var outputvideo03 = function(text) {
-   //      $("#videothird").append(text);
-   //      }
-   //  var output03 = function(text) {
-   //      $(".third").append(text);
-   //      }
-   //      $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list03) {
-        
-   //      var item03 = list03.results.collection1[2].movies.text;
-
-   // 		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20"+ item03, function(movie03){
-         
-   //       for(var i = 0; i<movie03.statuses.length; i++) {
-   //       output03("<p>"+ movie03.statuses[i].text + "</p>");
-   //        }
-   //    	});
-   //    $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item03, function(trailer03){
-
-   //        var url = trailer03[1].url;
-   //        var segment= url.split('=')[1].split('&')[0];
-   //        var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
-
-   //       outputvideo03(embed);
-   //      });
-   //      });
-
-  	// 	var outputvideo04 = function(text) {
-   //      $("#videofourth").append(text);
-   //      }
-   //    var output04 = function(text) {
-   //      $(".fourth").append(text);
-   //      }
-   //      $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list04) {
-        
-   //      var item04 = list04.results.collection1[3].movies.text;
-
-   // 		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20"+ item04, function(movie04){
-         
-   //       for(var i = 0; i<movie04.statuses.length; i++) {
-   //       output04("<p>"+ movie04.statuses[i].text + "</p>");
-   //        }
-   //    	});
-   //    $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item04, function(trailer04){
-
-   //        var url = trailer04[1].url;
-   //        var segment= url.split('=')[1].split('&')[0];
-   //        var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
-
-   //       outputvideo04(embed);
-   //      });
-   //      });
-
- 		// var outputvideo05 = function(text) {
-   //      $("#videofifth").append(text);
-   //      }
-   //  var output05 = function(text) {
-   //      $(".fifth").append(text);
-   //      }
-   //      $.getJSON("https://cooper-union-kimono-proxy.herokuapp.com/api/5jsfr3fi?apikey=KUM4jZPQEXMgITOSLLo8tC4l2nGXNTsj", function(list05) {
-        
-   //      var item05 = list05.results.collection1[4].movies.text;
-
-   // 		$.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20"+ item05, function(movie05){
-         
-   //       for(var i = 0; i<movie05.statuses.length; i++) {
-   //       output05("<p>"+ movie05.statuses[i].text + "</p>");
-   //        }
-   //    	});
-   //    $.getJSON("http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" + item05, function(trailer05){
-
-   //        var url = trailer05[1].url;
-   //        var segment= url.split('=')[1].split('&')[0];
-   //        var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
-
-   //       outputvideo05(embed);
-   //      });
-   //      });
+        };
 
 		</script>
 		
