@@ -15,7 +15,7 @@
 
           (function(i, item){
             var title = "<h1>"+item+ "</h1>";
-            $(".tweet-"+i).append(title);
+            $("#tweet-"+i).append(title);
             $("#video-"+i).append(title);
 
           var url = "http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20" + item;
@@ -24,7 +24,7 @@
             console.log(tweet)
             for(var j = 0; j< tweet.statuses.length; j++) {
        //
-              $(".tweet-"+i).append("<p>"+tweet.statuses[j].text+ "</p>");
+              $("#tweet-"+i).append("<p>"+tweet.statuses[j].text+ "</p>");
             };
           });
 
@@ -88,22 +88,22 @@
     margin-bottom: none;
     padding-bottom: none;
   }
-  .tweet-0, #video-0 {
+  #tweet-0, #video-0 {
     color: white;
   }
-  .tweet-1, #video-1 {
+  #tweet-1, #video-1 {
     color: #00FF00;
   }
-  .tweet-2, #video-2 {
+  #tweet-2, #video-2 {
     color: #4775FF;
   }
-  .tweet-3, #video-3 {
+  #tweet-3, #video-3 {
     color: #FF0066;
   }
-  .tweet-4, #video-4 {
+  #tweet-4, #video-4 {
     color: #FFFF00;
   }
-  .tweet-0,.tweet-1,.tweet-2,.tweet-3,.tweet-4 :hover{
+  .tweet:hover{
         width:50%;
         clear:both;
         
@@ -114,23 +114,23 @@
 	</head>
 	<body>
 		<header> Top 5 Trending Movies New Yorkers are talking about NOW. </header>
-		<div class="tweet-0">
+		<div class="tweet" id="tweet-0">
       <h1> #1 </h1>
 		</div>
 
-		<div class="tweet-1">
+		<div class="tweet" id="tweet-1">
       <h1> #2 </h1>
 		</div>
 
-		<div class="tweet-2">
+		<div class="tweet" id="tweet-2">
       <h1> #3 </h1>
 		</div>
 
-		<div class="tweet-3">
+		<div class="tweet" id="tweet-3">
       <h1> #4 </h1>
 		</div>
 
-		<div class="tweet-4">
+		<div class="tweet" id="tweet-4">
       <h1> #5 </h1>
 		</div>
 
