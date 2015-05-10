@@ -14,9 +14,9 @@
       var item = list.results.collection1[i].movies.text;
 
           (function(i, item){
-
-            $(".tweet-"+i).append("<h1>"+item+ "</h1>");
-            $("#video-"+i).append("<h1>"+item+ "</h1>");
+            var title = '"<h1>"+item+ "</h1>"'
+            $(".tweet-"+i).append(title);
+            $("#video-"+i).append(title);
 
           var url = "http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20" + item;
           console.log(url);
