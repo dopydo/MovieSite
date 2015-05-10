@@ -24,9 +24,6 @@
               $(".tweet-"+i).append("<p>"+tweet.statuses[j].text+ "</p>");
             };
           });
-        })(i, item);
-
-         (function(i, item){
 
           var youtube= "http://cooper-union-youtube-proxy.herokuapp.com/search/video/trailer%20" +item;
           console.log(youtube);
@@ -39,9 +36,8 @@
           $("#video-"+ i).append(embed);
          
         });
-  
+
         })(i, item);
-    
         };
 
 		</script>
