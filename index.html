@@ -37,7 +37,7 @@
             console.log(segment);
           var embed = '<iframe src="http://www.youtube.com/embed/'+segment+'" width="560" height="315" frameborder="0" allowfullscreen></iframe>';
             console.log(embed);
-          $("#video-"+ i).append(embed);
+          $("#video-"+ i).append("<p>"+embed+"</p>");
          
         });
 
@@ -86,9 +86,7 @@
   .tweet-0, #video-0 {
     color: #FFFFB2;
   }
-  iframe {
-    clear:both;
-  }
+  
 		</style>
 
 	</head>
