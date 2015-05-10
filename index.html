@@ -15,13 +15,15 @@
 
           (function(i, item){
 
+            $(".tweet-"+i).append("<h1>"+item+ "</h1>");
+
           var url = "http://cooper-union-search-proxy.herokuapp.com/twitter/search/in%20movie%20theater%20" + item;
           console.log(url);
           $.getJSON(url, function(tweet){
             console.log(tweet)
             for(var j = 0; j< tweet.statuses.length; j++) {
        //
-              $(".tweet-"+i).append("<h1>"+item+ "</h1>"+"<p>"+tweet.statuses[j].text+ "</p>");
+              $(".tweet-"+i).append("<p>"+tweet.statuses[j].text+ "</p>");
             };
           });
 
